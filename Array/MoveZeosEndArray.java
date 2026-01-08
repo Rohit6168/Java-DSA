@@ -1,0 +1,43 @@
+package Array;
+
+import java.util.Arrays;
+
+// Given an array of integers arr[], the task is to move all the zeros to the end of the array while maintaining the relative order of all non-zero elements.
+
+// Examples: 
+
+// Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]
+// Output: arr[] = [1, 2, 4, 3, 5, 0, 0, 0]
+// Explanation: There are three 0s that are moved to the end.
+
+// Input: arr[] = [10, 20, 30]
+// Output: arr[] = [10, 20, 30]
+// Explanation: No change in array as there are no 0s.
+// package Array;
+
+public class MoveZeosEndArray {
+    public static void move(int nums[]) {
+        int count=0;
+        int n=nums.length;
+        
+        for(int i=0;i<n;i++){
+            if(nums[i]!=0){
+                int temp=nums[i];
+                nums[i]=nums[count];
+                nums[count]=temp;
+
+                count++;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int nums[] = { 0,2, 3, 0, 5, 0, 4, 6, 0, 7 };
+        move(nums);
+        for(int i=0;i<nums.length;i++){
+            System.out.print(nums[i]+" ");
+        }
+        System.out.println();
+        // System.out.println(Arrays.toString(nums));
+    }
+}
