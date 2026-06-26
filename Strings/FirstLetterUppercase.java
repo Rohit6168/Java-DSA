@@ -18,7 +18,8 @@ public class FirstLetterUppercase {
         return sb.toString();
     }
     public static void main(String[] args) {
-        String str="hi, i am rohit";
+        // String str="hi, i am rohit";
+        String str="my name is rohit";
         System.out.println(toUppercase(str));
     }
     

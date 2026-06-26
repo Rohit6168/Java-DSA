@@ -3,7 +3,14 @@ package Strings;
 import java.util.*;
 
 public class DuplicateCharacters {
-  public static void printDuplicateCharacters(String str) {
+    public static void main(String[] args) {
+
+        String str = "programming";
+        printDuplicateCharacters(str);
+
+    }
+
+    public static void printDuplicateCharacters(String str) {
         Map<Character, Integer> map = new HashMap<>();
 
         // Count frequency of each character
@@ -15,13 +22,8 @@ public class DuplicateCharacters {
         System.out.println("Duplicate characters and their counts:");
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
             if (entry.getValue() > 1) {
-                System.out.println(entry.getKey() + " → " + entry.getValue() + " times");
+                System.out.println(entry.getKey() + "==>" + entry.getValue() + " times");
             }
         }
-    }
-
-    public static void main(String[] args) {
-        String str = "programming";
-        printDuplicateCharacters(str);
     }
 }
