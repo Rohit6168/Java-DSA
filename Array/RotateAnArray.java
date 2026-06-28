@@ -26,7 +26,7 @@ public class RotateAnArray {
         }
         System.out.println();
 
-        rotate(arr, 5 );
+        rotate(arr, 4);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+" ");
         }

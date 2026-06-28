@@ -33,6 +33,6 @@ public class TwoSum {
     public static void main(String args[]){
         int arr[]={1,2,3,4,5};
         int target=7;
-        System.out.println(Arrays.toString(index1(arr, target)));
+        System.out.println(Arrays.toString(index(arr, target)));
     }
 }

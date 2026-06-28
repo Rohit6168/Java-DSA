@@ -1,38 +1,38 @@
 package Array;
+
 import java.util.Arrays;
+
 public class ThirdLargest {
 
-    public static int thirdLargest(int nums[]){
-        int n=nums.length;
-        Arrays.sort(nums);
+    public static int thirdLargest(int arr[]) {
 
-      
-        return nums[n-3];
-    }
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        int thirdLargest = Integer.MIN_VALUE;
 
-    public static int thirdLargest1(int[] arr) {
-        int n = arr.length;
-        int first = Integer.MIN_VALUE, second = Integer.MIN_VALUE,
-        third = Integer.MIN_VALUE;
-        
-        for (int i = 0; i < n; i++) {
-            if (arr[i] > first) {
-                third = second;
-                second = first;
-                first = arr[i];
-            }
-            else if (arr[i] > second) {
-                third = second;
-                second = arr[i];
-            }
-            else if (arr[i] > third) {
-                third = arr[i];
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] > largest) {
+                thirdLargest = secondLargest;
+                secondLargest = largest;
+                largest = arr[i];
+            } 
+            else if (arr[i] > secondLargest && arr[i] != largest) {
+                thirdLargest = secondLargest;
+                secondLargest = arr[i];
+            } 
+            else if (arr[i] > thirdLargest &&
+                    arr[i] != largest &&
+                    arr[i] != secondLargest) {
+                thirdLargest = arr[i];
             }
         }
-        return third;
+
+        return thirdLargest;
     }
+
     public static void main(String[] args) {
-        int nums[]={4,7,9,12,33,2,5};
+        int nums[] = { 4, 7, 9, 12, 33, 2, 5 };
         System.out.println(thirdLargest(nums));
     }
 }
